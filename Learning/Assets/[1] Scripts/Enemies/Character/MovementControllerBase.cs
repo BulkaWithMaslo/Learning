@@ -2,7 +2,7 @@
 
 namespace Enemies.Character
 {
-    public abstract class MovementControllerBase : MonoBehaviour
+    public abstract class MovementControllerBase : ControllerBase
     {
         protected Vector3 _movementDirection;
         protected Vector3 _rotation;
@@ -10,7 +10,5 @@ namespace Enemies.Character
         public Vector3 Rotation => _rotation;
 
         public abstract void UpdateInput();
-
-        public abstract void Initialize();
     }
 }
