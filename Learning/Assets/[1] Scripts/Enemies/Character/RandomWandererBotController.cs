@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Extensions;
+using UnityEngine;
 
 namespace Enemies.Character
 {
@@ -15,7 +16,7 @@ namespace Enemies.Character
         {
             if (Vector3.Distance(_targetPosition, transform.position) < _stopDistance)
             {
-                _targetPosition = Extensions.RandomInsideBox(_bottomLeftPoint, _topRightPoint);
+                _targetPosition = VectorExtensions.RandomInsideBox(_bottomLeftPoint, _topRightPoint);
             }
 
             _rotation = Quaternion.LookRotation(_targetPosition - transform.position).eulerAngles
@@ -25,7 +26,7 @@ namespace Enemies.Character
 
         public override void Initialize()
         {
-            _targetPosition = Extensions.RandomInsideBox(_bottomLeftPoint, _topRightPoint);
+            _targetPosition = VectorExtensions.RandomInsideBox(_bottomLeftPoint, _topRightPoint);
         }
 
         private void OnDrawGizmos()
